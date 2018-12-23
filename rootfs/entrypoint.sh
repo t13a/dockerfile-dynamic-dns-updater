@@ -19,7 +19,6 @@ then
     chown "${UPDATER_USER}:${UPDATER_USER}" "${PARAMS}"
     chmod 600 "${PARAMS}"
     echo "-u ${USERNAME} -p ${PASSWORD} ${DOMAIN} ${SUB_DOMAIN} ${CPANEL_URL}" > "${PARAMS}"
-EOF
 fi
 
 if [ ${#@} -gt 0 ]
