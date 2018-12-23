@@ -25,9 +25,9 @@ fi
 if [ ${#@} -gt 0 ]
 then
     exec "${@}"
-elif [ -e "${CRONTAB}" ]
+elif [ -n "${DISABLE_CROND:-}" ]
 then
-    exec crond -f
-else
     cat "${PARAMS}" | xargs "${UPDATER_PY}"
+else
+    exec crond -f
 fi
